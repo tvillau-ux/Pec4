@@ -1,0 +1,367 @@
+/* ============================================================
+   Debug Console Stylesheet
+   Dark semi-transparent overlay for in-game debugging.
+   ============================================================ */
+
+:root {
+    --debug-bg: rgba(15, 15, 20, 0.92);
+    --debug-section-bg: rgba(30, 30, 40, 0.85);
+    --debug-header-bg: rgba(50, 50, 70, 0.9);
+    --debug-accent: rgb(100, 180, 255);
+    --debug-accent-hover: rgb(130, 200, 255);
+    --debug-danger: rgb(255, 80, 80);
+    --debug-danger-hover: rgb(255, 110, 110);
+    --debug-success: rgb(80, 200, 100);
+    --debug-success-hover: rgb(110, 220, 130);
+    --debug-warning: rgb(255, 200, 60);
+    --debug-text: rgb(220, 220, 230);
+    --debug-text-dim: rgb(150, 150, 170);
+    --debug-border: rgba(80, 80, 110, 0.6);
+    --debug-input-bg: rgba(20, 20, 30, 0.9);
+    --debug-btn-bg: rgba(50, 55, 75, 0.95);
+    --debug-radius: 4px;
+    --debug-font-size: 15px;
+}
+
+/* ---- Root Panel ---- */
+#DebugRoot {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 520px;
+    min-height: 700px;
+    background-color: var(--debug-bg);
+    border-radius: 8px;
+    border-width: 1px;
+    border-color: var(--debug-border);
+    padding: 0;
+    overflow: hidden;
+}
+
+/* ---- Title Bar ---- */
+#TitleBar {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--debug-header-bg);
+    padding: 10px 14px;
+    border-bottom-width: 1px;
+    border-bottom-color: var(--debug-border);
+}
+
+#TitleLabel {
+    font-size: 18px;
+    -unity-font-style: bold;
+    color: var(--debug-accent);
+    letter-spacing: 1px;
+}
+
+#VersionLabel {
+    font-size: 12px;
+    color: var(--debug-text-dim);
+}
+
+/* ---- Scrollable Content ---- */
+#ScrollContent {
+    padding: 8px;
+    flex-grow: 1;
+}
+
+/* ---- Section ---- */
+.debug-section {
+    background-color: var(--debug-section-bg);
+    border-radius: var(--debug-radius);
+    border-width: 1px;
+    border-color: var(--debug-border);
+    margin-bottom: 4px;
+    overflow: hidden;
+}
+
+.section-header {
+    flex-direction: row;
+    align-items: center;
+    padding: 8px 10px;
+    background-color: var(--debug-header-bg);
+    border-bottom-width: 1px;
+    border-bottom-color: var(--debug-border);
+    cursor: link;
+}
+
+.section-header:hover {
+    background-color: rgba(60, 60, 85, 0.95);
+}
+
+.section-icon {
+    font-size: 14px;
+    color: var(--debug-accent);
+    margin-right: 6px;
+    -unity-font-style: bold;
+}
+
+.section-title {
+    font-size: var(--debug-font-size);
+    -unity-font-style: bold;
+    color: var(--debug-text);
+}
+
+.section-body {
+    padding: 8px 10px;
+}
+
+/* ---- Row Layouts ---- */
+.debug-row {
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 3px;
+}
+
+.debug-row-wrap {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: 3px;
+}
+
+/* ---- Buttons ---- */
+.debug-btn {
+    height: 32px;
+    padding: 4px 14px;
+    margin: 1px 2px;
+    background-color: var(--debug-btn-bg);
+    border-radius: var(--debug-radius);
+    border-width: 1px;
+    border-color: var(--debug-border);
+    color: var(--debug-text);
+    font-size: var(--debug-font-size);
+    -unity-text-align: middle-center;
+    cursor: link;
+    flex-shrink: 0;
+}
+
+.debug-btn:hover {
+    background-color: rgba(70, 75, 100, 0.95);
+    border-color: var(--debug-accent);
+}
+
+.debug-btn:active {
+    background-color: rgba(40, 45, 65, 0.95);
+}
+
+.btn-danger {
+    border-color: var(--debug-danger);
+    color: var(--debug-danger);
+}
+
+.btn-danger:hover {
+    background-color: rgba(255, 80, 80, 0.15);
+    border-color: var(--debug-danger-hover);
+}
+
+.btn-success {
+    border-color: var(--debug-success);
+    color: var(--debug-success);
+}
+
+.btn-success:hover {
+    background-color: rgba(80, 200, 100, 0.15);
+    border-color: var(--debug-success-hover);
+}
+
+.btn-warning {
+    border-color: var(--debug-warning);
+    color: var(--debug-warning);
+}
+
+.btn-warning:hover {
+    background-color: rgba(255, 200, 60, 0.15);
+}
+
+.btn-wide {
+    flex-grow: 1;
+}
+
+/* ---- Dropdowns ---- */
+.debug-dropdown {
+    flex-grow: 1;
+    height: 32px;
+    margin: 1px 2px;
+    background-color: var(--debug-input-bg);
+    border-radius: var(--debug-radius);
+    border-width: 1px;
+    border-color: var(--debug-border);
+    color: var(--debug-text);
+    font-size: var(--debug-font-size);
+    overflow: hidden; /* Ensure inner content doesn't overflow rounded corners */
+}
+
+/* Ensure the inner input box occupies the full height and is transparent to show the parent's styled bg */
+.debug-dropdown .unity-base-popup-field__input,
+.debug-dropdown .unity-popup-field__input {
+    background-color: transparent;
+    border-width: 0;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    padding: 0 4px;
+    margin: 0;
+}
+
+/* Hide unused/empty labels so the dropdown input fills the entire field width */
+.debug-dropdown .unity-base-popup-field__label,
+.debug-dropdown .unity-popup-field__label {
+    display: none;
+    width: 0;
+    min-width: 0;
+}
+
+.debug-dropdown .unity-base-popup-field__text,
+.debug-dropdown .unity-popup-field__text {
+    color: var(--debug-text);
+    font-size: var(--debug-font-size);
+    padding-left: 4px;
+    margin: 0;
+    -unity-text-align: middle-left;
+    flex-grow: 1;
+}
+
+.debug-dropdown .unity-base-popup-field__arrow,
+.debug-dropdown .unity-popup-field__arrow {
+    -unity-background-image-tint-color: var(--debug-text-dim);
+    margin-right: 4px;
+}
+
+/* ---- Dropdown Popup Menu Overrides (White Background, Black Text for High Contrast) ---- */
+.unity-base-dropdown-window,
+.unity-popup-window,
+.unity-base-dropdown {
+    background-color: transparent !important;
+    border-width: 0 !important;
+}
+
+.unity-base-dropdown__container-outer {
+    background-color: rgb(255, 255, 255) !important;
+    border-width: 1px !important;
+    border-color: rgb(180, 180, 180) !important;
+    border-radius: 4px !important;
+}
+
+.unity-base-dropdown__container-inner,
+.unity-base-dropdown .unity-scroll-view {
+    background-color: rgb(255, 255, 255) !important;
+}
+
+.unity-base-dropdown__item {
+    background-color: rgb(255, 255, 255) !important;
+    height: 30px !important;
+    justify-content: center !important;
+    padding: 4px 8px !important;
+}
+
+.unity-base-dropdown__item:hover {
+    background-color: rgb(220, 235, 255) !important;
+}
+
+.unity-base-dropdown__item .unity-base-dropdown__label,
+.unity-base-dropdown__item:hover .unity-base-dropdown__label {
+    color: rgb(0, 0, 0) !important;
+    font-size: var(--debug-font-size) !important;
+}
+
+.unity-base-dropdown__item .unity-base-dropdown__checkmark,
+.unity-base-dropdown__item:hover .unity-base-dropdown__checkmark {
+    -unity-background-image-tint-color: rgb(0, 0, 0) !important;
+}
+
+/* ---- Integer / Text Fields ---- */
+.debug-input {
+    flex-grow: 1;
+    height: 32px;
+    margin: 1px 2px;
+    background-color: var(--debug-input-bg);
+    border-radius: var(--debug-radius);
+    border-width: 1px;
+    border-color: var(--debug-border);
+    color: var(--debug-text);
+    font-size: var(--debug-font-size);
+}
+
+.debug-input .unity-text-element {
+    color: var(--debug-text);
+}
+
+.debug-input .unity-base-text-field__input {
+    background-color: var(--debug-input-bg);
+    border-width: 0;
+    color: var(--debug-text);
+    padding: 0 4px;
+}
+
+/* ---- Sliders ---- */
+.debug-slider {
+    flex-grow: 1;
+    margin: 1px 2px;
+}
+
+.debug-slider .unity-base-slider__dragger {
+    background-color: var(--debug-accent);
+    border-radius: 3px;
+    width: 12px;
+    height: 12px;
+}
+
+.debug-slider .unity-base-slider__tracker {
+    background-color: rgba(50, 55, 75, 0.9);
+    border-radius: 2px;
+    height: 4px;
+}
+
+/* ---- Toggle ---- */
+.debug-toggle {
+    margin: 1px 2px;
+    color: var(--debug-text);
+    font-size: var(--debug-font-size);
+}
+
+.debug-toggle .unity-toggle__checkmark {
+    background-color: var(--debug-input-bg);
+    border-width: 1px;
+    border-color: var(--debug-border);
+    border-radius: 3px;
+    width: 16px;
+    height: 16px;
+}
+
+.debug-toggle:checked .unity-toggle__checkmark {
+    background-color: var(--debug-accent);
+    border-color: var(--debug-accent);
+}
+
+/* ---- Labels ---- */
+.debug-label {
+    font-size: var(--debug-font-size);
+    color: var(--debug-text-dim);
+    margin: 1px 2px;
+    -unity-text-align: middle-left;
+    min-width: 45px;
+}
+
+.status-label {
+    font-size: 12px;
+    color: var(--debug-text-dim);
+    margin-top: 4px;
+    -unity-font-style: italic;
+}
+
+/* ---- Footer ---- */
+#Footer {
+    padding: 6px 14px;
+    border-top-width: 1px;
+    border-top-color: var(--debug-border);
+    background-color: var(--debug-header-bg);
+}
+
+#FooterLabel {
+    font-size: 12px;
+    color: var(--debug-text-dim);
+    -unity-text-align: middle-center;
+}

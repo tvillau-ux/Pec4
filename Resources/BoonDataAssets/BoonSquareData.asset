@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29ba8a5768c788941b1520618b2c6a5b, type: 3}
+  m_Name: BoonSquareData
+  m_EditorClassIdentifier: Assembly-CSharp::Data.BoonData
+  BoonId: boon_square
+  BoonName: Boon of the Square
+  Description: 
+  Class: 1
+  OwnerCharacterType: 0
+  Category: 1
+  Level: 1
+  LevelScalingPerLevel: 0.15
+  CanStack: 0
+  MaxStacks: 1
+  StackDiminishingMultiplier: 0.8
+  Rarity: 1
+  Upgrades:
+  - UpgradeName: Attack Power
+    Description: Grants the user 10 flat damage on basic attacks
+    Modifiers:
+    - Type: 1
+      Operation: 0
+      Value: 10
+      TargetStat: AttackDamage
+  - UpgradeName: Special Tempo
+    Description: Reduce the cooldown of the special attacks on 10%
+    Modifiers:
+    - Type: 1
+      Operation: 1
+      Value: 0.9
+      TargetStat: SpecialCooldown
+  SynergyTags:
+  - Rare
+  Icon: {fileID: 0}
+  RarityColor: {r: 0.3, g: 0.6, b: 1, a: 1}

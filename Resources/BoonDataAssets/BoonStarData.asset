@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29ba8a5768c788941b1520618b2c6a5b, type: 3}
+  m_Name: BoonStarData
+  m_EditorClassIdentifier: Assembly-CSharp::Data.BoonData
+  BoonId: boon_star
+  BoonName: Boon of the Star
+  Description: 
+  Class: 3
+  OwnerCharacterType: 0
+  Category: 0
+  Level: 1
+  LevelScalingPerLevel: 0.15
+  CanStack: 0
+  MaxStacks: 1
+  StackDiminishingMultiplier: 0.8
+  Rarity: 3
+  Upgrades:
+  - UpgradeName: Attack Tempo
+    Description: Reduce the cooldown of the attacks on 15%
+    Modifiers:
+    - Type: 0
+      Operation: 1
+      Value: 0.85
+      TargetStat: AttackCooldown
+  - UpgradeName: Power
+    Description: ' Grants the user x1.25 damage for attacks'
+    Modifiers:
+    - Type: 0
+      Operation: 1
+      Value: 1.25
+      TargetStat: SpecialDamage
+  SynergyTags:
+  - Legendary
+  Icon: {fileID: 0}
+  RarityColor: {r: 1, g: 0.85, b: 0.2, a: 1}

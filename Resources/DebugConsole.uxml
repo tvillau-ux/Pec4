@@ -1,0 +1,117 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements">
+    <ui:Style src="DebugConsole.uss" />
+
+    <ui:VisualElement name="DebugRoot">
+
+        <!-- Title Bar -->
+        <ui:VisualElement name="TitleBar">
+            <ui:Label name="TitleLabel" text="DEBUG CONSOLE" />
+            <ui:Label name="VersionLabel" text="F1 to toggle" />
+        </ui:VisualElement>
+
+        <!-- Scrollable Content -->
+        <ui:ScrollView name="ScrollContent">
+
+            <!-- ======== ENEMIES ======== -->
+            <ui:VisualElement class="debug-section">
+                <ui:VisualElement class="section-header">
+                    <ui:Label class="section-icon" text="" />
+                    <ui:Label class="section-title" text="Enemies" />
+                </ui:VisualElement>
+                <ui:VisualElement class="section-body">
+                    <ui:VisualElement class="debug-row">
+                        <ui:DropdownField name="EnemyDropdown" class="debug-dropdown" />
+                        <ui:Button name="BtnSpawnEnemy" text="Spawn" class="debug-btn" />
+                    </ui:VisualElement>
+                    <ui:VisualElement class="debug-row">
+                        <ui:IntegerField name="EnemyCount" value="1" class="debug-input" label="Count" />
+                    </ui:VisualElement>
+                    <ui:VisualElement class="debug-row">
+                        <ui:Button name="BtnKillAll" text="Kill All Enemies" class="debug-btn btn-danger btn-wide" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+            </ui:VisualElement>
+
+            <!-- ======== ROOM ======== -->
+            <ui:VisualElement class="debug-section">
+                <ui:VisualElement class="section-header">
+                    <ui:Label class="section-icon" text="" />
+                    <ui:Label class="section-title" text="Room" />
+                </ui:VisualElement>
+                <ui:VisualElement class="section-body">
+                    <ui:VisualElement class="debug-row">
+                        <ui:Button name="BtnClearRoom" text="Clear Current Room" class="debug-btn btn-success btn-wide" />
+                    </ui:VisualElement>
+                    <ui:VisualElement class="debug-row">
+                        <ui:IntegerField name="RoomIndex" value="0" class="debug-input" label="Room #" />
+                        <ui:Button name="BtnGoToRoom" text="Go" class="debug-btn" />
+                    </ui:VisualElement>
+                    <ui:Label name="RoomStatusLabel" text="" class="status-label" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+
+            <!-- ======== FLOOR ======== -->
+            <ui:VisualElement class="debug-section">
+                <ui:VisualElement class="section-header">
+                    <ui:Label class="section-icon" text="" />
+                    <ui:Label class="section-title" text="Floor" />
+                </ui:VisualElement>
+                <ui:VisualElement class="section-body">
+                    <ui:VisualElement class="debug-row">
+                        <ui:DropdownField name="FloorDropdown" class="debug-dropdown" />
+                        <ui:Button name="BtnGoToFloor" text="Load" class="debug-btn" />
+                    </ui:VisualElement>
+                    <ui:Label name="FloorStatusLabel" text="" class="status-label" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+
+            <!-- ======== PLAYER ======== -->
+            <ui:VisualElement class="debug-section">
+                <ui:VisualElement class="section-header">
+                    <ui:Label class="section-icon" text="" />
+                    <ui:Label class="section-title" text="Player" />
+                </ui:VisualElement>
+                <ui:VisualElement class="section-body">
+                    <ui:VisualElement class="debug-row">
+                        <ui:Toggle name="ToggleGodMode" label="God Mode" class="debug-toggle" />
+                    </ui:VisualElement>
+                    <ui:VisualElement class="debug-row">
+                        <ui:Button name="BtnHealFull" text="Heal Full" class="debug-btn btn-success btn-wide" />
+                    </ui:VisualElement>
+                    <ui:VisualElement class="debug-row">
+                        <ui:SliderInt name="HealthSlider" low-value="1" high-value="500" value="100" show-input-field="true" class="debug-slider" label="HP" />
+                    </ui:VisualElement>
+                    <ui:VisualElement class="debug-row">
+                        <ui:Button name="BtnSetHealth" text="Set Health" class="debug-btn btn-wide" />
+                    </ui:VisualElement>
+                    <ui:Label name="PlayerStatusLabel" text="" class="status-label" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+
+            <!-- ======== BOONS ======== -->
+            <ui:VisualElement class="debug-section">
+                <ui:VisualElement class="section-header">
+                    <ui:Label class="section-icon" text="" />
+                    <ui:Label class="section-title" text="Boons" />
+                </ui:VisualElement>
+                <ui:VisualElement class="section-body">
+                    <ui:VisualElement class="debug-row">
+                        <ui:DropdownField name="BoonDropdown" class="debug-dropdown" />
+                        <ui:Button name="BtnGrantBoon" text="Spawn" class="debug-btn btn-success" />
+                    </ui:VisualElement>
+                    <ui:VisualElement class="debug-row">
+                        <ui:Button name="BtnClearBoons" text="Clear All Boons" class="debug-btn btn-danger btn-wide" />
+                    </ui:VisualElement>
+                    <ui:Label name="BoonStatusLabel" text="" class="status-label" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+
+        </ui:ScrollView>
+
+        <!-- Footer -->
+        <ui:VisualElement name="Footer">
+            <ui:Label name="FooterLabel" text="Press F1 to close" />
+        </ui:VisualElement>
+
+    </ui:VisualElement>
+</ui:UXML>

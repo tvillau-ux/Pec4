@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29ba8a5768c788941b1520618b2c6a5b, type: 3}
+  m_Name: BoonCircleData
+  m_EditorClassIdentifier: Assembly-CSharp::Data.BoonData
+  BoonId: boon_circle
+  BoonName: Boon of the Circle
+  Description: 
+  Class: 2
+  OwnerCharacterType: 0
+  Category: 0
+  Level: 1
+  LevelScalingPerLevel: 0.15
+  CanStack: 0
+  MaxStacks: 1
+  StackDiminishingMultiplier: 0.8
+  Rarity: 2
+  Upgrades:
+  - UpgradeName: Attack Power
+    Description: ' Grants the user 10 flat damage on basic attacks'
+    Modifiers:
+    - Type: 1
+      Operation: 0
+      Value: 10
+      TargetStat: AttackDamage
+  - UpgradeName: Special Power
+    Description: ' Grants the user x1.2 damage for special attacks'
+    Modifiers:
+    - Type: 1
+      Operation: 1
+      Value: 1.2
+      TargetStat: SpecialDamage
+  SynergyTags:
+  - Epic
+  Icon: {fileID: 0}
+  RarityColor: {r: 0.3, g: 1, b: 0.4, a: 1}

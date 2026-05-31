@@ -1,0 +1,18 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="BoonSelection.uss" />
+    <ui:VisualElement name="BoonSelectionRoot">
+        <ui:VisualElement name="SelectionPanel">
+            <ui:VisualElement name="HeaderContainer">
+                <ui:Label name="ClassHeader" text="CLASS NAME" />
+                <ui:Label name="ClassSubheader" text="Choose your boon" />
+                <ui:VisualElement name="HeaderDivider" />
+            </ui:VisualElement>
+
+            <ui:VisualElement name="CardsContainer">
+                <ui:VisualElement name="BoonSlot0" class="boon-slot boon-slot--empty" />
+                <ui:VisualElement name="BoonSlot1" class="boon-slot boon-slot--empty" />
+                <ui:VisualElement name="BoonSlot2" class="boon-slot boon-slot--empty" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
