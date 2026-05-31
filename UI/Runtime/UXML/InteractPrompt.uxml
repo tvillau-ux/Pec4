@@ -1,0 +1,10 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements">
+    <ui:VisualElement name="InteractPromptRoot" class="interact-prompt-root">
+        <ui:VisualElement name="InteractPromptContainer" class="interact-prompt-container">
+            <ui:VisualElement name="ButtonBadge" class="button-badge">
+                <ui:Label name="ButtonLabel" class="button-label" text="E" />
+            </ui:VisualElement>
+            <ui:Label name="ActionLabel" class="action-label" text="Interact" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

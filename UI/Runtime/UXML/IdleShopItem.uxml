@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="../USS/IdleShop.uss" />
+    <ui:VisualElement name="ItemRow" class="menu-item-row">
+
+        <!-- Column 1: Image -->
+        <ui:VisualElement name="ColumnIcon" class="column-icon">
+            <ui:VisualElement name="ItemImage" class="item-image" />
+        </ui:VisualElement>
+
+        <!-- Column 2: Name and Level -->
+        <ui:VisualElement name="ColumnInfo" class="column-info">
+            <ui:Label name="ItemLevel" text="" class="item-level" />
+            <ui:Label name="ItemName" text="" class="item-name" />
+        </ui:VisualElement>
+
+        <!-- Column 3: Currency Generation -->
+        <ui:VisualElement name="ColumnGeneration" class="column-generation">
+            <ui:Label text="Generation:" class="generation-label" />
+            <ui:Label name="ItemGeneration" text="" class="generation-text" />
+        </ui:VisualElement>
+
+        <!-- Column 4: Cost Amount -->
+        <ui:VisualElement name="ColumnCost" class="column-cost">
+            <ui:Label text="Cost:" class="generation-label" />
+            <ui:Label name="ItemCost" text="" class="cost-text cost-affordable" />
+        </ui:VisualElement>
+
+    </ui:VisualElement>
+</ui:UXML>

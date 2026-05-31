@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="../USS/IdleShop.uss" />
+    <ui:VisualElement name="MainContainer" class="menu-container">
+
+        <!-- Header: currency balance and total production -->
+        <ui:VisualElement name="MenuHeader" class="menu-header">
+            <ui:VisualElement class="header-stat">
+                <ui:Label text="Balance" class="header-label" />
+                <ui:Label name="CurrencyLabel" text="0" class="header-currency" />
+            </ui:VisualElement>
+            <ui:VisualElement class="header-stat header-stat-right">
+                <ui:Label text="Production" class="header-label" />
+                <ui:Label name="ProductionLabel" text="0/sec" class="header-production" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+
+        <!-- Tabs: Items / Upgrades -->
+        <ui:VisualElement name="MenuTabs" class="menu-tabs">
+            <ui:Button name="TabItems" text="ITEMS" class="tab-btn active" />
+            <ui:Button name="TabUpgrades" text="UPGRADES" class="tab-btn" />
+        </ui:VisualElement>
+
+        <!-- Items list -->
+        <ui:ScrollView name="MenuScrollView" class="menu-scroll-view" />
+
+        <!-- Upgrades list (hidden until the Upgrades tab is selected) -->
+        <ui:ScrollView name="UpgradeScrollView" class="menu-scroll-view" style="display: none;" />
+
+        <!-- Footer (items tab only): buy/sell toggle and quantity multipliers -->
+        <ui:VisualElement name="MenuFooter" class="menu-footer">
+            <ui:Button name="BtnBuySell" text="BUY" class="footer-btn footer-btn-buy-sell active" />
+            <ui:Button name="BtnMult1" text="1" class="footer-btn active" />
+            <ui:Button name="BtnMult10" text="10" class="footer-btn" />
+            <ui:Button name="BtnMult50" text="50" class="footer-btn" />
+            <ui:Button name="BtnMultMax" text="Max" class="footer-btn" />
+        </ui:VisualElement>
+
+    </ui:VisualElement>
+</ui:UXML>

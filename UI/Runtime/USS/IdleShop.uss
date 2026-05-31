@@ -1,0 +1,251 @@
+/* IdleMenu (was IdleShop).uss */
+
+:root {
+    --primary-color: #3b3b3b;
+    --secondary-color: #525252;
+    --affordable-color: #4cd964;
+    --unaffordable-color: #ff3b30;
+    --button-active-color: #007aff;
+    --button-inactive-color: #2c2c2c;
+    --border-color: #888888;
+    --currency-color: #ffd24c;
+
+    --padding-small: 8px;
+    --padding-medium: 16px;
+
+    --font-size-small: 14px;
+    --font-size-medium: 18px;
+    --font-size-large: 24px;
+}
+
+.menu-container {
+    flex-grow: 1;
+    background-color: var(--primary-color);
+    padding: var(--padding-medium);
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+/* Header */
+.menu-header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--padding-small);
+    padding-bottom: var(--padding-small);
+    border-bottom-color: var(--border-color);
+    border-bottom-width: 2px;
+}
+
+.header-stat {
+    flex-direction: column;
+}
+
+.header-stat-right {
+    align-items: flex-end;
+}
+
+.header-label {
+    font-size: var(--font-size-small);
+    color: #aaaaaa;
+}
+
+.header-currency {
+    font-size: var(--font-size-large);
+    -unity-font-style: bold;
+    color: var(--currency-color);
+}
+
+.header-production {
+    font-size: var(--font-size-medium);
+    -unity-font-style: bold;
+    color: white;
+}
+
+/* Tabs */
+.menu-tabs {
+    flex-direction: row;
+    height: 44px;
+    margin-bottom: var(--padding-small);
+}
+
+.tab-btn {
+    flex-grow: 1;
+    margin: 0 4px;
+    background-color: var(--button-inactive-color);
+    color: white;
+    -unity-font-style: bold;
+    font-size: var(--font-size-medium);
+    border-radius: 4px;
+    border-width: 0;
+}
+
+.tab-btn:hover {
+    background-color: #444444;
+}
+
+.tab-btn.active {
+    background-color: var(--button-active-color);
+}
+
+.menu-scroll-view {
+    flex-grow: 1;
+    margin-bottom: var(--padding-medium);
+}
+
+/* Item / Upgrade rows */
+.menu-item-row,
+.upgrade-item-row {
+    flex-direction: row;
+    height: 80px;
+    margin-bottom: 4px;
+    background-color: var(--secondary-color);
+    border-bottom-color: var(--border-color);
+    border-bottom-width: 1px;
+    align-items: center;
+}
+
+.upgrade-item-row.unity-button {
+    background-color: var(--secondary-color);
+    color: white;
+    border-width: 0;
+    border-radius: 0;
+    margin-bottom: 4px;
+    padding: 0;
+    -unity-font-style: normal;
+    align-items: center;
+}
+
+.upgrade-item-row.unity-button:hover {
+    background-color: #626262;
+}
+
+.upgrade-item-row.unity-button:disabled {
+    opacity: 0.55;
+}
+
+.upgrade-item-row.upgrade-row-run {
+    margin-top: 2px;
+    margin-bottom: 6px;
+    background-color: rgba(30, 36, 48, 0.95);
+}
+
+.upgrade-item-row.upgrade-row-run-owned {
+    opacity: 0.85;
+}
+
+.upgrade-item-row.upgrade-locked {
+    opacity: 0.55;
+}
+
+.column-icon {
+    width: 80px;
+    height: 80px;
+    margin-right: 16px;
+    align-items: center;
+    justify-content: center;
+}
+
+.item-image,
+.upgrade-image {
+    flex-shrink: 0;
+    /* Width/height set in code from native texture size (integer scale only). */
+    -unity-background-scale-mode: stretch-to-fill;
+}
+
+.column-info {
+    flex-grow: 2;
+    flex-direction: column;
+    justify-content: center;
+    padding-right: 16px;
+}
+
+.item-name {
+    font-size: var(--font-size-medium);
+    -unity-font-style: bold;
+    color: white;
+}
+
+.item-level {
+    font-size: var(--font-size-small);
+    color: #cccccc;
+}
+
+.upgrade-effect {
+    font-size: var(--font-size-small);
+    color: #cccccc;
+    white-space: normal;
+}
+
+.column-generation {
+    flex-grow: 1;
+    justify-content: center;
+    align-items: center;
+    padding-right: 16px;
+}
+
+.generation-text {
+    font-size: var(--font-size-medium);
+    color: white;
+}
+
+.generation-label {
+    font-size: var(--font-size-small);
+    color: #aaaaaa;
+}
+
+.column-cost {
+    flex-grow: 1;
+    justify-content: center;
+    align-items: flex-end;
+    padding-right: var(--padding-medium);
+}
+
+.cost-text {
+    font-size: var(--font-size-large);
+    -unity-font-style: bold;
+}
+
+.cost-affordable {
+    color: var(--affordable-color);
+}
+
+.cost-unaffordable {
+    color: var(--unaffordable-color);
+}
+
+/* Footer */
+.menu-footer {
+    flex-direction: row;
+    height: 60px;
+    justify-content: space-between;
+    align-items: stretch;
+    border-top-color: var(--border-color);
+    border-top-width: 2px;
+    padding-top: var(--padding-small);
+}
+
+.footer-btn {
+    flex-grow: 1;
+    margin: 0 4px;
+    background-color: var(--button-inactive-color);
+    color: white;
+    -unity-font-style: bold;
+    font-size: var(--font-size-medium);
+    border-radius: 4px;
+    border-width: 0;
+}
+
+.footer-btn:hover {
+    background-color: #444444;
+}
+
+.footer-btn.active {
+    background-color: var(--button-active-color);
+}
+
+.footer-btn-buy-sell {
+    flex-grow: 2;
+}

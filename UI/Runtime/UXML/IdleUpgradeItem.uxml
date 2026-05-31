@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="../USS/IdleShop.uss" />
+    <ui:Button name="UpgradeRow" class="upgrade-item-row">
+
+        <!-- Column 1: Next-tier icon -->
+        <ui:VisualElement name="ColumnIcon" class="column-icon">
+            <ui:VisualElement name="UpgradeImage" class="item-image upgrade-image" />
+        </ui:VisualElement>
+
+        <!-- Column 2: Name and effect / status -->
+        <ui:VisualElement name="ColumnInfo" class="column-info">
+            <ui:Label name="UpgradeName" text="" class="item-name" />
+            <ui:Label name="UpgradeEffect" text="" class="upgrade-effect" />
+        </ui:VisualElement>
+
+        <!-- Column 3: Cost -->
+        <ui:VisualElement name="ColumnCost" class="column-cost">
+            <ui:Label text="Upgrade:" class="generation-label" />
+            <ui:Label name="UpgradeCost" text="" class="cost-text cost-affordable" />
+        </ui:VisualElement>
+
+    </ui:Button>
+</ui:UXML>
